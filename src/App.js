@@ -7,9 +7,9 @@ import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
-import {addFeature} from "./store/products/actions";
+import {addFeature, removeItem} from "./store/products/actions";
 
-const App = ({products, addFeature}) => {
+const App = ({products, addFeature, removeItem}) => {
   const [state, setState] = useState(products);
 
   useEffect(()=> {
@@ -18,6 +18,7 @@ const App = ({products, addFeature}) => {
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
+      removeItem(item);
   };
 
   const buyItem = item => {
@@ -43,4 +44,4 @@ const App = ({products, addFeature}) => {
 
 const mapStateToProps = state => ({products: state.products})
 
-export default connect(mapStateToProps,{addFeature})(App);
+export default connect(mapStateToProps,{addFeature, removeItem})(App);

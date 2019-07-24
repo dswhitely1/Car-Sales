@@ -19,11 +19,18 @@ const initialState = {
 };
 
 const removeFeature = (state, payload) => {
-    return state;
+    return {
+        ...state,
+        additionalPrice : state.additionalPrice = state.additionalPrice - payload.price,
+        car: {
+            ...state.car,
+            features: state.car.features.filter(item => item.id !== payload.id),
+        },
+        store: [...state.store, payload]
+    }
 };
 
 const addFeature = (state, payload) => {
-    console.log(payload);
     return {
         ...state,
         additionalPrice : state.additionalPrice += payload.price,

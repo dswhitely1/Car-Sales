@@ -7,11 +7,12 @@ const addFeature = value => {
     }
 };
 
-const removeFeature = value => {
+const removeItem = value => {
     return {
-        type: REMOVE_FEATURE
+        type: REMOVE_FEATURE,
+        payload: value
     }
 };
 
-export {addFeature, removeFeature};
+export {addFeature, removeItem};
 
