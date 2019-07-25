@@ -21,7 +21,7 @@ const initialState = {
 const removeFeature = (state, payload) => {
     return {
         ...state,
-        additionalPrice : state.additionalPrice = state.additionalPrice - payload.price,
+        additionalPrice: state.additionalPrice = state.additionalPrice - payload.price,
         car: {
             ...state.car,
             features: state.car.features.filter(item => item.id !== payload.id),
@@ -33,7 +33,7 @@ const removeFeature = (state, payload) => {
 const addFeature = (state, payload) => {
     return {
         ...state,
-        additionalPrice : state.additionalPrice += payload.price,
+        additionalPrice: state.additionalPrice += payload.price,
         car: {
             ...state.car,
             features: [...state.car.features, payload]
